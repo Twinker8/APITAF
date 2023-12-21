@@ -76,8 +76,8 @@ namespace APITAF
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate that the list of users can be received successfully")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        [NUnit.Framework.TestCaseAttribute("Get", "/users", null)]
-        public void ValidateThatTheListOfUsersCanBeReceivedSuccessfully(string verb, string endpoint, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("/users", null)]
+        public void ValidateThatTheListOfUsersCanBeReceivedSuccessfully(string endpoint, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -87,7 +87,6 @@ namespace APITAF
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("verb", verb);
             argumentsOfScenario.Add("endpoint", endpoint);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate that the list of users can be received successfully", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
@@ -101,7 +100,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given(string.Format("I send a {0} request to {1} endpoint", verb, endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I send a Get request to {0} endpoint", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
  testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -110,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("the user should receive a 200 OK response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 8
- testRunner.Then("the response should contain a list of users with the following information:", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the response should contain a list of users with necessary info should count 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -118,12 +117,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate response header for a list of users")]
-        [NUnit.Framework.TestCaseAttribute("Get", "/users", null)]
-        public void ValidateResponseHeaderForAListOfUsers(string verb, string endpoint, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("/users", null)]
+        public void ValidateResponseHeaderForAListOfUsers(string endpoint, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("verb", verb);
             argumentsOfScenario.Add("endpoint", endpoint);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate response header for a list of users", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 14
@@ -137,7 +135,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 15
- testRunner.Given(string.Format("I send a {0} request to {1} endpoint", verb, endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I send a Get request to {0} endpoint", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 16
  testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -150,6 +148,111 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 19
  testRunner.Then("\"Content-Type\" header should have value \"application/json; charset=utf-8\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate list of users should be 10")]
+        [NUnit.Framework.TestCaseAttribute("/users", null)]
+        public void ValidateListOfUsersShouldBe10(string endpoint, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("endpoint", endpoint);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate list of users should be 10", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 25
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 26
+ testRunner.Given(string.Format("I send a Get request to {0} endpoint", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 27
+ testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 28
+ testRunner.Then("the user should receive a 200 OK response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 29
+ testRunner.And("the response should contain a list of users with necessary info should count 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 30
+ testRunner.And("there are no user id duplicates", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate creation of new user")]
+        [NUnit.Framework.TestCaseAttribute("/users", null)]
+        public void ValidateCreationOfNewUser(string endpoint, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("endpoint", endpoint);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate creation of new user", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 37
+ testRunner.Given(string.Format("I send a Post request to {0} endpoint", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 38
+ testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 39
+ testRunner.Then("the user should receive a 201 Created response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 40
+ testRunner.And("the new created user in not empty and contains the id value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Validate that user is notified if resource doesn’t exist")]
+        [NUnit.Framework.TestCaseAttribute("/invalidendpoint", null)]
+        public void ValidateThatUserIsNotifiedIfResourceDoesnTExist(string endpoint, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("endpoint", endpoint);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate that user is notified if resource doesn’t exist", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 46
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 47
+ testRunner.Given(string.Format("I send a Get request to {0} endpoint", endpoint), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 48
+ testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 49
+ testRunner.Then("the user should receive a 404 Not Found response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
