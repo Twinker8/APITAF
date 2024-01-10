@@ -1,6 +1,6 @@
 ﻿Feature: APITests
 
-@mytag
+@/usersEndpoint
 Scenario Outline: Validate that the list of users can be received successfully
 	Given I send a Get request to <endpoint> endpoint
 	When the response is received
@@ -11,6 +11,7 @@ Scenario Outline: Validate that the list of users can be received successfully
 	| endpoint |
 	| /users   |  
 
+@/usersEndpoint
 Scenario Outline: Validate response header for a list of users 
 	Given I send a Get request to <endpoint> endpoint
 	When the response is received
@@ -22,6 +23,7 @@ Scenario Outline: Validate response header for a list of users
 	| endpoint | 
 	| /users   | 
 
+@/usersEndpoint
 Scenario Outline: Validate list of users should be 10
 	Given I send a Get request to <endpoint> endpoint
 	When  the response is received 
@@ -33,6 +35,7 @@ Scenario Outline: Validate list of users should be 10
 	| endpoint |
 	| /users   | 
 
+@/usersEndpoint
 Scenario Outline: Validate creation of new user
 	Given I send a Post request to <endpoint> endpoint
 	When  the response is received 
@@ -43,6 +46,7 @@ Scenario Outline: Validate creation of new user
 	| endpoint |
 	| /users   | 
 
+@/invalidendpointEndpoint
 Scenario Outline: Validate that user is notified if resource doesn’t exist
 	Given I send a Get request to <endpoint> endpoint
 	When the response is received
