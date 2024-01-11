@@ -26,14 +26,6 @@ namespace APITAF
 
         private RestResponse _response;
 
-        
-        private readonly ScenarioContext _scenarioContext;
-
-        public StepDefinition1(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
-
         #region Given
         [Given(@"I send a Get request to (.*) endpoint")]
         public void GivenISendAGetRequestToEndpoint(string endpoint)
