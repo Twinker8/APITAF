@@ -15,11 +15,19 @@
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="ReportPortal.NUnit" Version="4.6.0" />
+    <PackageReference Include="ReportPortal.SpecFlow" Version="3.6.0" />
     <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.16" />
     <PackageReference Include="Selenium.Support" Version="4.16.2" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="121.0.6167.1600-beta" />
     <PackageReference Include="SpecFlow" Version="3.9.74" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.74" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReportPortal.config.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
