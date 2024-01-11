@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using APITAF.APIRequest;
 using FluentAssertions;
 using Newtonsoft.Json;
-using NUnit.Framework;
 using RestSharp;
 using RestSharp.Portable;
 using TechTalk.SpecFlow;
