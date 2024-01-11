@@ -1,15 +1,29 @@
 {
+
   "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-nunit/master/src/ReportPortal.NUnitExtension/ReportPortal.config.schema",
+
   "enabled": true,
+
   "server": {
-    "url": "https://reportportal.epam.com",
-    "project": "do_min_tkhan_lonh_personal",
-    "apiKey": "main_SpuE6A3_RFGOZlLDx_-GBBp-8HisTVksZTBBpOg16SkXBnW3uxg-tctIooqWw2g2"
+
+    "url": "https://demo.reportportal.io",
+
+    "project": "default_personal",
+
+    "apiKey": "moi_DLbw0VTqQiGuw5QrhrP6TgfoP-5hr2yLd9XKyJWD433Y1D0HsM3eDstsVPBN1FxC"
+
   },
+
   "launch": {
+
     "name": ".NET Launch",
+
     "description": "My awesome launch",
+
     "debugMode": false,
-    "attributes": [ "t1", "os:win11" ]
+
+    "attributes": [ "tag1", "tag2", "platform:x64" ]
+
   }
+
 }
