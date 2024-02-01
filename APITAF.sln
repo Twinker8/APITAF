@@ -9,6 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APITAF", "APITAF\APITAF.csp
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automation.API.Methods", "Automation.API.Methods\Automation.API.Methods.csproj", "{67F4C016-E0B8-4B16-8617-B21875F93F7C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F2D1D392-675C-4772-AE6D-CA6E76C5893F} = {F2D1D392-675C-4772-AE6D-CA6E76C5893F}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Automation.API.Mappers", "Automation.API.Maps\Automation.API.Mappers.csproj", "{F2D1D392-675C-4772-AE6D-CA6E76C5893F}"
 EndProject
