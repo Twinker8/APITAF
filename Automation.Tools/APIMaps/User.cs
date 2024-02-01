@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace APITAF
+namespace Automation.API.Mappers.APIMaps
 {
     public class User
     {

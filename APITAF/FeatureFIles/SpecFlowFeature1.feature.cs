@@ -76,8 +76,8 @@ namespace APITAF.FeatureFIles
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate that the list of users can be received successfully")]
         [NUnit.Framework.CategoryAttribute("/usersEndpoint")]
-        [NUnit.Framework.TestCaseAttribute("/users", null)]
-        public void ValidateThatTheListOfUsersCanBeReceivedSuccessfully(string endpoint, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("/users", "OK", null)]
+        public void ValidateThatTheListOfUsersCanBeReceivedSuccessfully(string endpoint, string responseCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "/usersEndpoint"};
@@ -88,6 +88,7 @@ namespace APITAF.FeatureFIles
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("endpoint", endpoint);
+            argumentsOfScenario.Add("responseCode", responseCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate that the list of users can be received successfully", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
@@ -106,7 +107,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
- testRunner.Then("the user should receive a 200 OK response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the user should receive a {0} response code", responseCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 8
  testRunner.Then("the response should contain a list of users with necessary info should count 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -118,8 +119,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate response header for a list of users")]
         [NUnit.Framework.CategoryAttribute("/usersEndpoint")]
-        [NUnit.Framework.TestCaseAttribute("/users", null)]
-        public void ValidateResponseHeaderForAListOfUsers(string endpoint, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("/users", "OK", null)]
+        public void ValidateResponseHeaderForAListOfUsers(string endpoint, string responseCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "/usersEndpoint"};
@@ -130,6 +131,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("endpoint", endpoint);
+            argumentsOfScenario.Add("responseCode", responseCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate response header for a list of users", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 15
 this.ScenarioInitialize(scenarioInfo);
@@ -148,7 +150,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
- testRunner.Then("the user should receive a 200 OK response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the user should receive a {0} response code", responseCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 19
  testRunner.And("I should see \"Content-Type\" in response headers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -163,8 +165,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate list of users should be 10")]
         [NUnit.Framework.CategoryAttribute("/usersEndpoint")]
-        [NUnit.Framework.TestCaseAttribute("/users", null)]
-        public void ValidateListOfUsersShouldBe10(string endpoint, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("/users", "OK", null)]
+        public void ValidateListOfUsersShouldBe10(string endpoint, string responseCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "/usersEndpoint"};
@@ -175,6 +177,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("endpoint", endpoint);
+            argumentsOfScenario.Add("responseCode", responseCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate list of users should be 10", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 27
 this.ScenarioInitialize(scenarioInfo);
@@ -193,7 +196,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 30
- testRunner.Then("the user should receive a 200 OK response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the user should receive a {0} response code", responseCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 31
  testRunner.And("the response should contain a list of users with necessary info should count 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -208,8 +211,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate creation of new user")]
         [NUnit.Framework.CategoryAttribute("/usersEndpoint")]
-        [NUnit.Framework.TestCaseAttribute("/users", null)]
-        public void ValidateCreationOfNewUser(string endpoint, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("/users", "Created", null)]
+        public void ValidateCreationOfNewUser(string endpoint, string responseCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "/usersEndpoint"};
@@ -220,6 +223,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("endpoint", endpoint);
+            argumentsOfScenario.Add("responseCode", responseCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate creation of new user", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 39
 this.ScenarioInitialize(scenarioInfo);
@@ -238,7 +242,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 42
- testRunner.Then("the user should receive a 201 Created response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the user should receive a {0} response code", responseCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 43
  testRunner.And("the new created user in not empty and contains the id value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -250,8 +254,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validate that user is notified if resource doesn’t exist")]
         [NUnit.Framework.CategoryAttribute("/invalidendpointEndpoint")]
-        [NUnit.Framework.TestCaseAttribute("/invalidendpoint", null)]
-        public void ValidateThatUserIsNotifiedIfResourceDoesnTExist(string endpoint, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("/invalidendpoint", "NotFound", null)]
+        public void ValidateThatUserIsNotifiedIfResourceDoesnTExist(string endpoint, string responseCode, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "/invalidendpointEndpoint"};
@@ -262,6 +266,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("endpoint", endpoint);
+            argumentsOfScenario.Add("responseCode", responseCode);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validate that user is notified if resource doesn’t exist", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 50
 this.ScenarioInitialize(scenarioInfo);
@@ -280,7 +285,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("the response is received", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 53
- testRunner.Then("the user should receive a 404 Not Found response code", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("the user should receive a {0} response code", responseCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
