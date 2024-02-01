@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Automation.API.Maps\Automation.API.Mappers.csproj" />
     <ProjectReference Include="..\Automation.Tools\Automation.API.Mappers.csproj" />
   </ItemGroup>
 
